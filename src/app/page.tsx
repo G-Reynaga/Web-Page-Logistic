@@ -1,113 +1,182 @@
-import Image from "next/image";
+import LogosMarquee from "@/components/logosMarquee";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { TbClockBolt, TbStar, TbMoneybag } from "react-icons/tb";
+import NumberTicker from "@/components/magicui/number-ticker";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-export default function Home() {
+function Home() {
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="flex flex-col gap-16">
+      <div className="relative">
+        <img
+          className="rounded brightness-50 w-full object-cover h-[200px] md:h-[400px] hidden md:block"
+          src="/Banner-Cobox.webp"
+          alt="imagen"
+          width={'auto'}
+        />
+        <div className="md:absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 md:px-0">
+          <h2 className="text-gray-600 md:text-white text-xl md:text-4xl font-bold text-center animate-blurred-fade-in">
+            Buscamos la <span className="text-blue-300 italic">mejor opción</span> para tus envíos
+          </h2>
+          <Card className="w-full md:w-3/4 rounded-3xl px-4 py-6 animate-slide-in-bottom">
+            <CardHeader>
+              <CardTitle className="text-blue-800 text-2xl md:text-3xl text-center md:text-left">
+                ¿Cuál es tu prioridad de envío?
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2"><TbMoneybag className="text-blue-300 size-6" /> Precio</li>
+                <li className="flex items-center gap-2"><TbClockBolt className="text-blue-300 size-6" /> Tiempo</li>
+                <li className="flex items-center gap-2"><TbStar className="text-blue-300 size-6" /> Calidad</li>
+              </ul>
+              <p className="w-full md:w-[450px] text-start md:text-left">
+                Todas las mejores opciones de reparto en un solo lugar, gestiona tus entregas con nosotros, cotiza ya.
+              </p>
+              <Button asChild variant={"outline"} className="bg-blue-900 text-gray-200 hover:text-blue-500 w-full md:w-[250px] md:text-base text-lg py-6">
+                <Link href="/quote">
+                  Cotiza Ahora!
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="flex flex-col gap-12 justify-center items-center">
+        <h1 className="text-2xl text-center md:text-left">
+          ¿Cómo funciona <span className="text-blue-800">nuestro servicio</span>?
+        </h1>
+        <div className="flex flex-col md:flex-row w-full gap-6 md:gap-24 justify-center xl:items-center">
+          <div className="flex md:flex-col gap-4 items-center md:items-start animate-fade-in delay-100">
+            <img
+              className="dark:bg-slate-300 p-4 rounded-lg size-28"
+              src="/Imagen-Registro.webp"
+              alt="Imagen registro"
+              height="auto"
+              width="auto"
+            />
+            <div className="flex items-center">
+              <span className="text-6xl text-blue-800 mr-4">1</span>
+              <p className="flex-1 text-center md:text-left">
+                <span className="block">Realiza tu</span>
+                <span className="block">registro completo.</span>
+              </p>
+            </div>
+          </div>
+          <div className="flex md:flex-col gap-4 items-center md:items-start animate-fade-in delay-200">
+            <img
+              className="dark:bg-slate-300 p-4 rounded-lg size-28"
+              src="Imagen-Escoger.webp"
+              alt="Imagen escoger"
+            />
+            <div className="flex items-center">
+              <span className="text-6xl text-blue-800 mr-4">2</span>
+              <p className="flex-1 text-center md:text-left">
+                <span className="block">Selecciona el</span>
+                <span className="block">mejor servicio.</span>
+              </p>
+            </div>
+          </div>
+          <div className="flex md:flex-col gap-4 items-center md:items-start animate-fade-in delay-300">
+            <img
+              className="dark:bg-slate-300 p-4 rounded-lg size-28"
+              src="Imagen-Entrega.webp"
+              alt="Imagen entrega"
+            />
+            <div className="flex items-center">
+              <span className="text-6xl text-blue-800 mr-4">3</span>
+              <p className="flex-1 text-center md:text-left">
+                <span className="block">Nosotros</span>
+                <span className="block">gestionamos tu envío.</span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
+      <div className="flex flex-col lg:flex-row gap-4 justify-center items-center py-8" data-aos="fade-up" >
+        <div className="flex-1">
+          <h1 className="text-2xl text-gray-800 dark:text-blue-800 font-bold md:text-4xl mb-8 text-center md:text-left">SOMOS UNA PLATAFORMA DE LOGÍSTICA INTEGRAL</h1>
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+            <div className="animate-slide-in-left reveal space-y-4">
+              <span className="font-bold">¬ Empresa</span>
+              <p className="w-full md:w-[300px] text-start md:text-left text-lg md:text-2xl mb-8">
+                Somos el soporte ideal para la gestión de tus entregas. Cotiza en tiempo real y obtén las mejores opciones.
+              </p>
+            </div>
+            <div className="animate-slide-in-right reveal space-y-4">
+              <span className="font-bold">¬ Servicio</span>
+              <p className="w-full md:w-[300px] text-start md:text-left text-lg md:text-2xl mb-8">
+                Desde pedidos individuales hasta carga masiva, tenemos el mejor proveedor para todos tus envíos.
+              </p>
+            </div>
+          </div>
+          <p className="w-full md:w-[450px] text-start md:text-left mt-6">
+            Queremos simplificar la experiencia de las entregas tanto para las personas como para las empresas. Gestionamos tus preferencias y te ofrecemos la mejor opción de forma única para cada pedido.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        </div>
+        <div>
+          <img src="/Imagen-Bolsas.webp" alt="Bolsas" />
+        </div>
       </div>
-    </main>
+
+      <div className="flex lg:flex-row flex-col gap-16">
+        <div className="">
+          <h1 className="text-3xl font-bold pb-6 text-gray-800 dark:text-blue-800">Empresas históricas que confiaron en nosotros</h1>
+          <p className="w-full text-lg md:w-[450px] border-b-4 pb-2 xs:mx-auto">
+            Cada operador logístico en el mercado posee sus propias ventajas o beneficios,
+            y poder gestionar a todos los operadores para una empresa o negocio supone un reto. Desde Empresa,
+            podemos gestionar las entregas de muchas empresas a través del operador correcto según tipos de entrega.
+          </p>
+        </div>
+        <div className="flex-1">
+          <h1 className="text-3xl font-bold pb-6 text-gray-800 dark:text-blue-800">Nuestros Números</h1>
+          <div className="grid md:grid-cols-2 gap-4 items-center animate-zoom-in reveal">
+            <div className="text-6xl text-blue-600 dark:text-white ">
+              +<NumberTicker value={12} />K
+              <p className="text-sm pt-4 italic">
+                <span className="block">
+                  ENVÍOS
+                </span>
+                <span className="block">
+                  REALIZADOS
+                </span>
+              </p>
+            </div>
+            <div className="text-6xl text-blue-600 dark:text-white">
+              +<NumberTicker value={10} />
+              <p className="text-sm pt-4 italic">
+                <span className="block">
+                  OPERADORES
+                </span>
+                <span className="block">
+                  LOGÍSTICOS
+                </span>  </p>
+            </div >
+            <div className="text-6xl text-blue-600 dark:text-white">
+              +<span className="text-xl">S/</span><NumberTicker value={120} />K
+              <p className="text-sm pt-4 italic">AHORRADOS</p>
+            </div>
+            <div className="text-6xl text-blue-600 dark:text-white">
+              +<NumberTicker value={1200} />
+              <p className="text-sm pt-4 italic">
+                <span className="block">
+                  USUARIOS
+                </span>
+                <span className="block">
+                  DIARIOS
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <LogosMarquee />
+    </div>
   );
 }
+
+export default Home;
